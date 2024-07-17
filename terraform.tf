@@ -11,7 +11,7 @@ terraform {
 
 # Configure the AWS provider
 provider "aws" {
-  region = "us-east-1"
+  region = "us-east-1a"
 }
 # Creating a VPC
 resource "aws_vpc" "proj-vpc" {
@@ -129,7 +129,7 @@ resource "aws_eip" "proj-eip" {
 resource "aws_instance" "Prod-Server" {
  ami = "ami-0a0e5d9c7acc336f1"
  instance_type = "t2.micro"
- availability_zone = "us-east-1"
+ availability_zone = "us-east-1a"
  key_name = "newkey"
  network_interface {
  device_index = 0
