@@ -31,9 +31,9 @@ resource "aws_security_group" "web_sg" {
 
 # Create an EC2 instance
 resource "aws_instance" "checking_terra" {
-  ami             = "ami-0e1ed41781c7602e8"  # Update with your preferred AMI ID
-  instance_type   = "t2.micro"  # Update with your desired instance type
-  key_name        = "newkey"
+  ami             = "ami-07b9427bb313ac35c"  # Update with your preferred AMI ID
+  instance_type   = "t2.medium"  # Update with your desired instance type
+  key_name        = "unbuntukeypair"
   security_groups = [aws_security_group.web_sg.name]
 
   tags = {
@@ -43,7 +43,7 @@ resource "aws_instance" "checking_terra" {
   # Optionally add a block device mapping to use EBS storage
   root_block_device {
     volume_type = "gp2"
-    volume_size = 8
+    volume_size = 15
   }
 
   # Optionally add a user data script to configure the instance at launch
