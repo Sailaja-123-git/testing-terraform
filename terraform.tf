@@ -15,8 +15,8 @@ resource "aws_security_group" "web_sg" {
   }
 
   ingress {
-    from_port   = 0  # Changed from 0.0.0.0/0 to 0 for all traffic
-    to_port     = 0  # Changed from 0.0.0.0/0 to 0 for all traffic
+    from_port   = 0
+    to_port     = 0
     protocol    = "-1"
     cidr_blocks = ["0.0.0.0/0"]
   }
@@ -30,7 +30,7 @@ resource "aws_security_group" "web_sg" {
 }
 
 # Create an EC2 instance
-resource "aws_instance" "checking-terra" {
+resource "aws_instance" "checking_terra" {
   ami             = "ami-0e1ed41781c7602e8"  # Update with your preferred AMI ID
   instance_type   = "t2.micro"  # Update with your desired instance type
   key_name        = "newkey"
@@ -55,5 +55,5 @@ resource "aws_instance" "checking-terra" {
 
 # Output the public IP address of the instance
 output "instance_public_ip" {
-  value = aws_instance.testing-server.public_ip
+  value = aws_instance.checking_terra.public_ip
 }
