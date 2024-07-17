@@ -3,7 +3,7 @@
 terraform {
   required_providers {
     aws = {
-      source  = "hashicorp/aws"
+      source  = "aws"
       version = "~> 4.0"
     }
   }
@@ -130,7 +130,7 @@ resource "aws_instance" "Prod-Server" {
  ami = "ami-0a0e5d9c7acc336f1"
  instance_type = "t2.micro"
  availability_zone = "us-east-1a"
- key_name = "newkey"
+ key_name = "newkey.pem"
  network_interface {
  device_index = 0
  network_interface_id = aws_network_interface.proj-ni.id
